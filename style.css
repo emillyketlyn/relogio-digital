@@ -1,0 +1,37 @@
+/* Estilo para o corpo da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+/* Container principal do relógio */
+.clock-container {
+    background-color: #222;
+    padding: 30px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Estilo para a hora (HH:MM:SS) */
+.clock {
+    font-size: 5em; /* Tamanho da fonte grande */
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Estilo para a data */
+.date {
+    font-size: 1.5em;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #bbb;
+}
