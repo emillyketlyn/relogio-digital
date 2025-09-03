@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio Digital</title>
+    
+    <style>
+        /* Estilos CSS para o relógio */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+
+        .clock-container {
+            background-color: #222;
+            padding: 30px 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .clock {
+            font-size: 5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .date {
+            font-size: 1.5em;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clock-container">
+        <div class="clock" id="clock"></div>
+        <div class="date" id="date"></div>
+    </div>
+    
+    <script>
+        // Código JavaScript para a funcionalidade do relógio
+        function updateClock() {
+            const now = new Date();
+            
+            // Formatando a hora
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+
+            // Formatando a data
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateString = now.toLocaleDateString('pt-BR', options);
+            
+            // Atualizando o HTML com a hora e a data
+            document.getElementById('clock').textContent = timeString;
+            document.getElementById('date').textContent = dateString;
+        }
+
+        // Chama a função a cada segundo para atualizar o relógio
+        setInterval(updateClock, 1000);
+
+        // Chama a função uma vez no início para evitar atraso
+        updateClock();
+    </script>
+
+</body>
+</html>
